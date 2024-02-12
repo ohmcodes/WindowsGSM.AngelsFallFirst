@@ -18,7 +18,7 @@
 🗃️ https://steamcommunity.com/app/367270/discussions/0/481115363859382148/
 
 ### Unofficial Documentation
-🗃️ None
+🗃️ https://steamcommunity.com/app/367270/discussions/0/350532536100345993/
 
 ### The Game
 🕹️ https://store.steampowered.com/app/367270/Angels_Fall_First/
