@@ -43,7 +43,7 @@ namespace WindowsGSM.Plugins
         // - Game server default values
         public string ServerName = "WGSM Angels Fall First";
         public string Defaultmap = "AFF-Ixion"; // Original (MapName)
-        public string Maxplayers = "3"; // WGSM reads this as string but originally it is number or int (MaxPlayers)
+        public string Maxplayers = "2"; // WGSM reads this as string but originally it is number or int (MaxPlayers)
         public string Port = "7777"; // WGSM reads this as string but originally it is number or int
         public string QueryPort = "27015"; // WGSM reads this as string but originally it is number or int (SteamQueryPort)
         public string Additional = "-seekfreeloadingserver";
@@ -64,18 +64,18 @@ namespace WindowsGSM.Plugins
                 return null;
             }
 
-            string param = "";
+            var param = new StringBuilder();
 
-            param += $"{_serverData.ServerMap}";
-            param += $"?MaxPlayers={_serverData.ServerMaxPlayer}";
+            param.Append($"{_serverData.ServerMap}");
+            param.Append($"?MaxPlayers={_serverData.ServerMaxPlayer}");
 
             if (_serverData.ServerParam.StartsWith("?"))
                 param.Append($"{_serverData.ServerParam}");
             else if (_serverData.ServerParam.StartsWith("-"))
                 param.Append($" {_serverData.ServerParam}");
 
-            param += $" -multihome={_serverData.ServerIP}";
-            param += $" -Port={_serverData.ServerPort}";
+            param.Append($" -multihome={_serverData.ServerIP}");
+            param.Append($" -Port={_serverData.ServerPort}");
 
 
             // Prepare Process
